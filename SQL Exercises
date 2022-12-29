@@ -1,0 +1,19 @@
+-- SQL Exercises
+-- 1
+select Name from AD_Window where AD_Window_ID = '100'
+
+--2
+update AD_Window
+set Name = '--'
+where AD_Window_ID = '100'
+
+--3
+select * from AD_Tab where AD_Window_ID = '100'
+
+--4
+select AD_Tab.Name,AD_Field.Name from AD_Tab join AD_Field where AD_Tab.AD_Tab_ID=AD_Field.AD_Field_ID AND AD_Window_ID = '100' order by AD_Tab.Name,AD_Field.Name
+
+--5
+select name, row_number()
+	over (order by AD_TAB.Name) as Number
+from AD_TAB
